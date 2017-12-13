@@ -9,6 +9,24 @@ namespace App;
 interface Subject
 {
     /**
+     * 取 時
+     * @return int
+     */
+    public function getHours(): int;
+
+    /**
+     * 取 分
+     * @return int
+     */
+    public function getMinutes(): int;
+
+    /**
+     * 取 秒
+     * @return int
+     */
+    public function getSeconds(): int;
+
+    /**
      * 加入 Observer 物件
      * @param Observer $observer
      * @return void

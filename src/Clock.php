@@ -21,6 +21,33 @@ class Clock implements Subject
     private $seconds;
 
     /**
+     * 實作 interface - 取 時
+     * @return int
+     */
+    public function getHours(): int
+    {
+        return $this->hours;
+    }
+
+    /**
+     * 實作 interface - 取 分
+     * @return int
+     */
+    public function getMinutes(): int
+    {
+        return $this->minutes;
+    }
+
+    /**
+     * 實作 interface - 取 秒
+     * @return int
+     */
+    public function getSeconds(): int
+    {
+        return $this->seconds;
+    }
+
+    /**
      * 實作 interface - 加入 Observer 物件
      * @param Observer $observer
      * @return void
@@ -64,7 +91,7 @@ class Clock implements Subject
     public function notify(): void
     {
         foreach ($this->observers as $observer) {
-            $observer->update($this->hours, $this->minutes, $this->seconds);
+            $observer->update($this->getHours(), $this->getMinutes(), $this->getSeconds());
         }
     }
 }
