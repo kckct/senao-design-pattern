@@ -28,17 +28,19 @@ interface Subject
 
     /**
      * 加入 Observer 物件
+     * @param string $channel
      * @param Observer $observer
      * @return void
      */
-    public function attach(Observer $observer): void;
+    public function attach(string $channel, Observer $observer): void;
 
     /**
      * 移除 Observer 物件
+     * @param string $channel
      * @param Observer $observer
      * @return void
      */
-    public function detach(Observer $observer): void;
+    public function detach(string $channel, Observer $observer): void;
 
     /**
      * 每秒執行
@@ -48,7 +50,8 @@ interface Subject
 
     /**
      * 通知訂閱者 observer
+     * @param string $channel
      * @return void
      */
-    public function notify(): void;
+    public function notify(string $channel): void;
 }

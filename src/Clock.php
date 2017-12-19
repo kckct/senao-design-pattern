@@ -8,7 +8,7 @@ namespace App;
  */
 class Clock implements Subject
 {
-    /** @var Observer[] */
+    /** @var Observer[][] */
     private $observers = [];
 
     /** @var int 時 */
@@ -49,24 +49,26 @@ class Clock implements Subject
 
     /**
      * 實作 interface - 加入 Observer 物件
+     * @param string $channel
      * @param Observer $observer
      * @return void
      */
-    public function attach(Observer $observer): void
+    public function attach(string $channel, Observer $observer): void
     {
-        $this->observers[] = $observer;
+        $this->observers[$channel][] = $observer;
     }
 
     /**
      * 實作 interface - 移除 Observer 物件
+     * @param string $channel
      * @param Observer $observer
      * @return void
      */
-    public function detach(Observer $observer): void
+    public function detach(string $channel, Observer $observer): void
     {
-        foreach ($this->observers as $key => $val) {
-            if ($val === $observer) {
-                unset($this->observers[$key]);
+        foreach ($this->getChannelObservers($channel) as $key => $val) {
+            if ($val instanceof $observer) {
+                unset($this->observers[$channel][$key]);
             }
         }
     }
@@ -81,17 +83,28 @@ class Clock implements Subject
         $this->minutes = date('i');
         $this->seconds = date('s');
 
-        $this->notify();
+        $this->notify('current-time');
     }
 
     /**
      * 實作 interface - 通知訂閱者 observer
+     * @param string $channel
      * @return void
      */
-    public function notify(): void
+    public function notify(string $channel): void
     {
-        foreach ($this->observers as $observer) {
+        foreach ($this->getChannelObservers($channel) as $observer) {
             $observer->update($this->getHours(), $this->getMinutes(), $this->getSeconds());
         }
+    }
+
+    /**
+     * 取得指定頻道的訂閱者
+     * @param string $channel
+     * @return array
+     */
+    private function getChannelObservers(string $channel): array
+    {
+        return $this->observers[$channel] ?? [];
     }
 }
