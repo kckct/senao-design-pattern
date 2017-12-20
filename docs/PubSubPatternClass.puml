@@ -1,0 +1,40 @@
+@startuml
+
+interface Observer {
+    +update()
+}
+
+class DigitalClock {
+    +update()
+}
+
+interface Subject {
+    +getHours()
+    +getMinutes()
+    +getSeconds()
+    +attach()
+    +detach()
+    +onTick()
+    +notify()
+}
+
+class Clock {
+    -observers
+    -hours
+    -minutes
+    -seconds
+    +getHours()
+    +getMinutes()
+    +getSeconds()
+    +attach()
+    +detach()
+    +onTick()
+    +notify()
+    -getChannelObservers()
+}
+
+Subject <|.. Clock
+Observer <|.. DigitalClock
+Subject .> Observer
+
+@enduml
