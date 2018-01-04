@@ -1,0 +1,41 @@
+@startuml
+
+class Director {
+    +construct()
+}
+
+interface Builder {
+    +buildCpu()
+    +buildRam()
+    +buildDisk()
+}
+
+class LaptopBuilder {
+    -computer
+    +buildCpu()
+    +buildRam()
+    +buildDisk()
+    +getComputer()
+}
+
+class DesktopBuilder {
+    -computer
+    +buildCpu()
+    +buildRam()
+    +buildDisk()
+    +getComputer()
+}
+
+class Computer {
+    -parts
+    +add()
+    +show()
+}
+
+Director o-> Builder
+Builder <|.. LaptopBuilder
+Builder <|.. DesktopBuilder
+LaptopBuilder *-> Computer
+DesktopBuilder *-> Computer
+
+@enduml
