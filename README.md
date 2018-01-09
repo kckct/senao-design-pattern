@@ -3,3 +3,4 @@
 - Homework 1 : Observer Pattern ([Class Diagram](./docs/ObserverPatternClass.png))
 - Homework 2 : Publish/Subscribe Pattern ([Class Diagram](./docs/PubSubPatternClass.png))
 - Homework 4 : Builder Pattern ([Class Diagram](./docs/BuilderPatternClass.png))
+- Homework 5 : Factory Pattern ([Class Diagram](./docs/FactoryPatternClass.png))

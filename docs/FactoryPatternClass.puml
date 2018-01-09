@@ -1,0 +1,31 @@
+@startuml
+
+class BankFactory {
+    {static} +create()
+}
+
+interface Bank {
+    +verifyCreditCard()
+}
+
+class NCCC {
+    +verifyCreditCard()
+}
+
+class CTBC {
+    +verifyCreditCard()
+}
+
+class Cathay {
+    +verifyCreditCard()
+}
+
+BankFactory .-> Bank
+Bank <|.. NCCC
+Bank <|.. CTBC
+Bank <|.. Cathay
+BankFactory *-> NCCC
+BankFactory *-> CTBC
+BankFactory *-> Cathay
+
+@enduml
