@@ -1,0 +1,113 @@
+@startuml
+
+package AbstractFactory {
+    class AbstractFactory {
+        -parts
+        {static} +createFactory()
+        +createCustom()
+        #createHat()
+        #createHelmet()
+        #createArmor()
+        #createBoots()
+        #createWeapon()
+    }
+
+    class AbstractHat {
+    }
+
+    class AbstractHelmet {
+    }
+
+    class AbstractArmor {
+    }
+
+    class AbstractBoots {
+    }
+
+    class AbstractWeapon {
+    }
+
+    AbstractFactory --> AbstractHat
+    AbstractFactory --> AbstractHelmet
+    AbstractFactory --> AbstractArmor
+    AbstractFactory --> AbstractBoots
+    AbstractFactory --> AbstractWeapon
+}
+
+package Pokemon {
+    class PokemonFactory {
+        #createHat()
+        #createHelmet()
+        #createArmor()
+        #createBoots()
+        #createWeapon()
+    }
+
+    class PokemonHat {
+    }
+
+    class PokemonHelmet {
+    }
+
+    class PokemonArmor {
+    }
+
+    class PokemonBoots {
+    }
+
+    class PokemonWeapon {
+    }
+
+    AbstractFactory <|-left- PokemonFactory
+    AbstractHat <|-left- PokemonHat
+    AbstractHelmet <|-left- PokemonHelmet
+    AbstractArmor <|-left- PokemonArmor
+    AbstractBoots <|-left- PokemonBoots
+    AbstractWeapon <|-left- PokemonWeapon
+
+    PokemonFactory --> PokemonHat
+    PokemonFactory --> PokemonHelmet
+    PokemonFactory --> PokemonArmor
+    PokemonFactory --> PokemonBoots
+    PokemonFactory --> PokemonWeapon
+}
+
+package Warcraft {
+    class WarcraftFactory {
+        #createHat()
+        #createHelmet()
+        #createArmor()
+        #createBoots()
+        #createWeapon()
+    }
+
+    class WarcraftHat {
+    }
+
+    class WarcraftHelmet {
+    }
+
+    class WarcraftArmor {
+    }
+
+    class WarcraftBoots {
+    }
+
+    class WarcraftWeapon {
+    }
+
+    AbstractFactory <|-left- WarcraftFactory
+    AbstractHat <|-left- WarcraftHat
+    AbstractHelmet <|-left- WarcraftHelmet
+    AbstractArmor <|-left- WarcraftArmor
+    AbstractBoots <|-left- WarcraftBoots
+    AbstractWeapon <|-left- WarcraftWeapon
+
+    WarcraftFactory --> WarcraftHat
+    WarcraftFactory --> WarcraftHelmet
+    WarcraftFactory --> WarcraftArmor
+    WarcraftFactory --> WarcraftBoots
+    WarcraftFactory --> WarcraftWeapon
+}
+
+@enduml
