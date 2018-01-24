@@ -1,0 +1,26 @@
+@startuml
+
+class Order {
+	- price
+	- strategy
+    + getPrice()
+}
+
+interface Strategy {
+    + calculate()
+}
+
+class RebateStrategy {
+	+ calculate()
+}
+
+class DiscountStrategy {
+	+ calculate()
+}
+
+Order o-right-> Strategy
+Strategy <|.. RebateStrategy
+Strategy <|.. DiscountStrategy
+
+@enduml
+
