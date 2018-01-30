@@ -1,0 +1,31 @@
+@startuml
+
+abstract class PrintDocumentFunction {
+    - action
+    + open()
+    + print()
+    + close()
+    + display()
+}
+
+class PrintRandomTimes {
+    + printRandom()
+}
+
+abstract class PrintDocumentAction {
+    {abstract} print()
+    {abstract} open()
+    {abstract} close()
+}
+
+class PrintOutput {
+    + print()
+    + open()
+    + close()
+}
+
+PrintDocumentFunction <|-down- PrintRandomTimes
+PrintDocumentFunction o-right- PrintDocumentAction
+PrintDocumentAction <|-down- PrintOutput
+
+@enduml
