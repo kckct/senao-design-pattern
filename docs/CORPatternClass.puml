@@ -1,0 +1,28 @@
+@startuml
+
+interface CheckerInterface {
+    + setNextChecker()
+    + check()
+}
+
+abstract class AbstractChecker {
+    # nextChecker
+	+ setNextChecker()
+	+ check()
+	# processCheck()
+}
+
+class FormatChecker {
+	# processCheck()
+}
+
+class VerificationCodeChecker {
+	# processCheck()
+}
+
+CheckerInterface <|.. AbstractChecker
+AbstractChecker <|.. FormatChecker
+AbstractChecker <|.. VerificationCodeChecker
+
+@enduml
+

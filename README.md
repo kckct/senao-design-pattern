@@ -7,3 +7,4 @@
 - Homework 6 : Abstract Factory Pattern ([Class Diagram](./docs/AbstractFactoryPatternClass.png))
 - Homework 7 : Strategy Pattern ([Class Diagram](./docs/StrategyPatternClass.png))
 - Homework 8 : Bridge Pattern ([Class Diagram](./docs/BridgePatternClass.png))
+- Homework 9 : Chain Of Responsibility Pattern ([Class Diagram](./docs/CORPatternClass.png))
