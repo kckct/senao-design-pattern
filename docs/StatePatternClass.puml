@@ -1,0 +1,42 @@
+@startuml
+
+interface LightStateInterface {
+    + handle()
+    + showLight()
+}
+
+class TrafficLight {
+    - lightState
+	+ getLightState()
+	+ changeLightState()
+}
+
+class RedLight {
+	+ handle()
+    + showLight()
+}
+
+class GreenLight {
+	+ handle()
+    + showLight()
+}
+
+class YellowLight {
+	+ handle()
+    + showLight()
+}
+
+class Color {
+}
+
+TrafficLight o-> LightStateInterface
+LightStateInterface <|.. RedLight
+LightStateInterface <|.. GreenLight
+LightStateInterface <|.. YellowLight
+
+RedLight -> Color
+GreenLight -> Color
+YellowLight -> Color
+
+@enduml
+
