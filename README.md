@@ -9,3 +9,4 @@
 - Homework 8 : Bridge Pattern ([Class Diagram](./docs/BridgePatternClass.png))
 - Homework 9 : Chain Of Responsibility Pattern ([Class Diagram](./docs/CORPatternClass.png))
 - Homework 10 : State Pattern ([Class Diagram](./docs/StatePatternClass.png))
+- Homework 11 : Decorator Pattern ([Class Diagram](./docs/DecoratorPatternClass.png))

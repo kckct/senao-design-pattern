@@ -1,0 +1,62 @@
+@startuml
+
+class Order {
+	- creditCard
+    + getPrice()
+    + getOther()
+}
+
+class CreditCardFactory {
+    {static} + create()
+}
+
+interface CreditCard {
+    + processPrice()
+    + processOther()
+}
+
+class CTBC {
+	+ processPrice()
+	+ processOther()
+}
+
+class Taishin {
+	+ processPrice()
+	+ processOther()
+}
+
+class Citibank {
+	+ processPrice()
+	+ processOther()
+}
+
+class processService {
+    {static} + calculateDefaultPrice()
+    {static} + getDefaultOther()
+}
+
+class processDecorator {
+    {static} + calculateRebate()
+    {static} + calculateDiscount()
+    {static} + getCoupon()
+    {static} + getExtra()
+    {static} + getPoint()
+}
+
+Order *-right-> CreditCardFactory
+CreditCardFactory .-> CreditCard
+CreditCard <|.. CTBC
+CreditCard <|.. Taishin
+CreditCard <|.. Citibank
+CreditCardFactory *-> CTBC
+CreditCardFactory *-> Taishin
+CreditCardFactory *-> Citibank
+CTBC *-> processService
+CTBC *-> processDecorator
+Taishin *-> processService
+Taishin *-> processDecorator
+Citibank *-> processService
+Citibank *-> processDecorator
+
+@enduml
+
