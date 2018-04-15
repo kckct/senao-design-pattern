@@ -35,7 +35,7 @@ class Citibank implements CreditCard
         $point = ProcessDecorator::getPoint($origin);
 
         // 加一元多一件
-        $extra = ProcessDecorator::getExtra($point);
+        $extra = OrderProxy::getExtra($point);
 
         return $extra();
     }

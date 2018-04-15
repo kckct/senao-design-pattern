@@ -10,3 +10,4 @@
 - Homework 9 : Chain Of Responsibility Pattern ([Class Diagram](./docs/CORPatternClass.png))
 - Homework 10 : State Pattern ([Class Diagram](./docs/StatePatternClass.png))
 - Homework 11 : Decorator Pattern ([Class Diagram](./docs/DecoratorPatternClass.png))
+- Homework 12 : Proxy Pattern ([Class Diagram](./docs/ProxyPatternClass.png))
