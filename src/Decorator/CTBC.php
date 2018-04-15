@@ -21,7 +21,7 @@ class CTBC implements CreditCard
         $rebate = ProcessDecorator::calculateRebate($origin);
 
         // 全館八折
-        $discount = ProcessDecorator::calculateDiscount($rebate);
+        $discount = OrderProxy::calculateDiscount($rebate);
 
         return $discount($price);
     }
@@ -35,7 +35,7 @@ class CTBC implements CreditCard
         $origin = ProcessService::getDefaultOther();
 
         // 送一百元折價券
-        $coupon = ProcessDecorator::getCoupon($origin);
+        $coupon = OrderProxy::getCoupon($origin);
 
         return $coupon();
     }

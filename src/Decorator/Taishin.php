@@ -18,7 +18,7 @@ class Taishin implements CreditCard
         $origin = ProcessService::calculateDefaultPrice();
 
         // 全館八折
-        $discount = ProcessDecorator::calculateDiscount($origin);
+        $discount = OrderProxy::calculateDiscount($origin);
 
         return $discount($price);
     }
@@ -32,10 +32,10 @@ class Taishin implements CreditCard
         $origin = ProcessService::getDefaultOther();
 
         // 加一元多一件
-        $extra = ProcessDecorator::getExtra($origin);
+        $extra = OrderProxy::getExtra($origin);
 
         // 送一百元折價券
-        $coupon = ProcessDecorator::getCoupon($extra);
+        $coupon = OrderProxy::getCoupon($extra);
 
         return $coupon();
     }
