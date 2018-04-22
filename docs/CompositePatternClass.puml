@@ -1,0 +1,66 @@
+@startuml
+
+class CartService {
+	- products
+    + addCart()
+    + calculatePrice()
+}
+
+interface Price {
+    + getPrice()
+}
+
+class AppleWatch {
+	+ getPrice()
+}
+
+class IPadAir {
+	+ getPrice()
+}
+
+class MacBookPro {
+	+ getPrice()
+}
+
+class NintendoSwitch {
+	+ getPrice()
+}
+
+class Zelda {
+	+ getPrice()
+}
+
+class AppleCombo {
+    - products
+	+ getPrice()
+}
+
+class SwitchCombo {
+    - products
+	+ getPrice()
+}
+
+class AppleSwitchCombo {
+    - products
+	+ getPrice()
+}
+
+CartService o-right-> Price
+Price <|.. AppleWatch
+Price <|.. IPadAir
+Price <|.. MacBookPro
+Price <|.. NintendoSwitch
+Price <|.. Zelda
+Price <|.. AppleCombo
+Price <|.. SwitchCombo
+Price <|.. AppleSwitchCombo
+AppleCombo *-> AppleWatch
+AppleCombo *-> IPadAir
+AppleCombo *-> MacBookPro
+SwitchCombo *-> NintendoSwitch
+SwitchCombo *-> Zelda
+AppleSwitchCombo *-> AppleCombo
+AppleSwitchCombo *-> SwitchCombo
+
+@enduml
+
