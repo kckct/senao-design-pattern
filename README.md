@@ -11,3 +11,4 @@
 - Homework 10 : State Pattern ([Class Diagram](./docs/StatePatternClass.png))
 - Homework 11 : Decorator Pattern ([Class Diagram](./docs/DecoratorPatternClass.png))
 - Homework 12 : Proxy Pattern ([Class Diagram](./docs/ProxyPatternClass.png))
+- Homework 13 : Composite Pattern ([Class Diagram](./docs/CompositePatternClass.png))
